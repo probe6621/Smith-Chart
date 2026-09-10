@@ -61,6 +61,29 @@ class TestToroidalSmithTransformer(unittest.TestCase):
         self.assertAlmostEqual(flux[1], 0.0)
 
 
+    def test_standard_smith_anchor_points(self):
+        """Verify baseline anchor points against standard RF values at baseline Z0 = 50 ohms."""
+        transformer = ToroidalSmithTransformer(base_impedance=50.0)
+        
+        # 1. Matched load (Z = 50) -> Center of chart (Gamma = 0)
+        gamma_matched = transformer.reflection_coefficient(50.0)
+        self.assertAlmostEqual(np.abs(gamma_matched), 0.0)
+        
+        # 2. Short circuit (Z = 0) -> Extreme left (Gamma = -1)
+        gamma_short = transformer.reflection_coefficient(0.0)
+        self.assertAlmostEqual(gamma_short, -1.0 + 0.0j)
+        
+        # 3. Open circuit (Z -> infinity) -> Extreme right (Gamma = +1)
+        gamma_open = transformer.reflection_coefficient(1e9)
+        self.assertAlmostEqual(np.abs(gamma_open), 1.0, places=4)
+        self.assertAlmostEqual(np.angle(gamma_open), 0.0, places=4)
+
+        # 4. Pure reactance (Z = j50) -> Lies on unit circle perimeter (|Gamma| = 1)
+        gamma_reactance = transformer.reflection_coefficient(50.0j)
+        self.assertAlmostEqual(np.abs(gamma_reactance), 1.0)
+        self.assertAlmostEqual(np.angle(gamma_reactance), np.pi / 2)
+
+
     def test_toroidal_mapping_bounds_across_varying_densities(self):
         """Verify that mapping coordinates remain mathematically bounded for various density inputs."""
         R_major = 2.0
