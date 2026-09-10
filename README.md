@@ -57,5 +57,11 @@ Smith-Chart/
 4. **Run the interactive web dashboard:**
    Open `web/index.html` in any modern web browser to launch the 3D WebGL toroidal visualization tool and experiment with real-time vacuum density and phase modulation sliders.
 
+## Contact & Resources
+
+* **Project Website:** [epsilonframework.org](https://epsilonframework.org)
+* **Direct Inquiries:** [contact@epsilonframework.org](mailto:contact@epsilonframework.org)
+* **Repository:** [github.com/probe6621/Smith-Chart](https://github.com/probe6621/Smith-Chart)
+
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
