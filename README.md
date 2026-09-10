@@ -1,5 +1,7 @@
 # Toroidal Smith Chart Engine
 
+[![Watch the Short](https://img.shields.io/badge/Watch-YouTube%20Short-red?logo=youtube)](https://youtube.com/shorts/KAx9b2xY9r4)
+
 An open-source visualization and simulation tool that extends the classical 2D RF Smith chart into a dynamic, toroidal manifold. Built for exploring non-linear impedance transformations, dynamic vacuum-density coupling ($\rho(x,t)$), and topological phase boundaries beyond standard static 50-ohm scalar assumptions.
 
 ## Why is the Smith Chart Called the "Black Magic Chart"?
@@ -56,6 +58,11 @@ Smith-Chart/
 
 4. **Run the interactive web dashboard:**
    Open `web/index.html` in any modern web browser to launch the 3D WebGL toroidal visualization tool and experiment with real-time vacuum density and phase modulation sliders.
+
+## Video Demonstration
+
+Watch the short explainer and overview of the Toroidal Smith Chart engine in action:
+👉 [Watch on YouTube](https://youtube.com/shorts/KAx9b2xY9r4)
 
 ## Contact & Resources
 
